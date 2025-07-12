@@ -3,24 +3,27 @@ import Tasks from "@/pages/Tasks";
 import User from "@/pages/User";
 import { createBrowserRouter } from "react-router";
 
-
 const router = createBrowserRouter([
-    {
-        path : "/",
-        // element : <App/>,
-        Component : App,
-        children : [
-            {
-                path : "user",
-                Component : User,
-            },
-            {
-                path : "tasks",
-                Component : Tasks
-            }
-        ]
-    },
+  {
+    path: "/",
+    // element : <App/>,
+    Component: App,
+    children: [
+      {
+        index: true,
+        Component: Tasks,
+      },
+      {
+        path: "tasks",
+        Component: Tasks,
+      },
 
-])
+      {
+        path: "users",
+        Component: User,
+      },
+    ],
+  },
+]);
 
 export default router;
